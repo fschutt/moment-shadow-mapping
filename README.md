@@ -49,7 +49,7 @@ b' = 1.0 − (a ⋅ b) + (a ⋅ pow(vec4(0.0, 0.63, 0.0, 0.63), T))
 
 Original HLSL: 
 
-```
+```hlsl
 float ComputeMSMShadowIntensity(float4 b,float FragmentDepth) {
     float L32D22=mad(-b[0],b[1],b[2]);
     float D22=mad(-b[0],b[0], b[1]);
@@ -83,7 +83,7 @@ float ComputeMSMShadowIntensity(float4 b,float FragmentDepth) {
 
 GLSL port, comment out the fma() calls for OpenGL 4:
 
-```
+```glsl
 /// Computes the Moment-shadow intensity for the fragment depth
 /// 
 /// - b is RGBA value that you got from sampling the texture and 
